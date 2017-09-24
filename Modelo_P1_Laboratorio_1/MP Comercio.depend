@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1506211460 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"header.h"
+
+1506211425 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\header.h
+
+1506211824 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"header.h"
+

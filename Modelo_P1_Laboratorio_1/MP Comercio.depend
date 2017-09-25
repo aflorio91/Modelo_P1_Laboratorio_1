@@ -5,11 +5,19 @@
 	<string.h>
 	"header.h"
 
-1506211425 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\header.h
+1506291727 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\header.h
 
-1506211824 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\funciones.c
+1506292820 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_p1_laboratorio_1\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"header.h"
+
+1506378944 source:e:\modelo_p1_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"header.h"
+
+1506378944 e:\modelo_p1_laboratorio_1\header.h
 

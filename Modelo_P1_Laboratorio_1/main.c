@@ -20,7 +20,7 @@ int main()
         printf("2- Modificar Datos de Producto.\n");
         printf("3- Baja del Producto.\n");
         printf("4- Informar Stock.\n");
-        printf("5- Listar Productos");
+        printf("5- Listar Productos\n");
         printf("9- Salir\n");
 
         scanf("%d",&opcion);
@@ -52,6 +52,7 @@ int main()
             break;
         case 5:
             system("cls");
+
             printf("\n");
             break;
         case 9:

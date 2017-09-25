@@ -21,46 +21,63 @@ typedef struct
     int codigoProveedor;
 } eRelacion;
 
-int validarString(char palabra[]);
-int validar_entero(int unEntero);
-/** \brief
+/**
+ * \brief Verifica si el valor recibido contiene solo letras
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si contiene solo ' ' y letras y 0 si no lo es
  *
- * \param
- * \param
- * \return
- *
+ */
+int esSoloLetras(char str[]);
+
+/**
+ * \brief Verifica si el valor recibido es numérico
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si es númerico y 0 si no lo es
+ */
+int esNumerico(char str[]);
+
+/**
+ * \brief Verifica si el valor recibido contiene solo letras y números
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si contiene solo espacio o letras y números, y 0 si no lo es
+ */
+int esAlfaNumerico(char str[]);
+
+/**
+ * \brief Le carga al los arrays valores de productos y proveedores respetivamente
+ * \param array de productos
+ * \param array de proveedores
+ * \return VOID
  */
 void inicializar_arrays(eProducto productos[], eProveedor proveedores[]);
-/** \brief
- *
- * \param
- * \param
- * \return
- *
+
+/**
+ * \brief Pide por pantalla los datos de un producto a ser ingresado por teclado
+ * \param array de productos
+ * \return VOID
  */
 void alta_producto(eProducto productos[]);
-/** \brief
- *
- * \param
- * \param
- * \return
- *
+
+/**
+ * \brief modifica los datos de un producto en un array
+ * \param array de productos
+ * \return VOID
  */
 void modificar_producto(eProducto productos[]);
-/** \brief
- *
- * \param
- * \param
- * \return
- *
+
+/**
+ * \brief deshabilita un producto del array
+ * \param array de productos
+ * \return VOID
  */
 void baja_producto(eProducto productos[]);
-/** \brief
- *
- * \param
- * \param
- * \return
- *
+
+/**
+ * \brief muestra los productos del array que mas stock tiene y el que menos stock tiene
+ * \param array de productos
+ * \return void
  */
 void informar_stock(eProducto productos[]);
+
+
 #endif // HEADER_H_INCLUDED

@@ -39,9 +39,8 @@ int esAlfaNumerico(char str[])
     return 1;
 }
 
-void inicializar_arrays(eProducto productos[], eProveedor proveedores[])
+void inicializar_arrays(eProducto productos[], eProveedor proveedores[], eRelacion relaciones[])
 {
-
     for ( int i = 0; i<10; i++)
     {
         productos[i].flag_estado = 0;
@@ -73,6 +72,11 @@ void inicializar_arrays(eProducto productos[], eProveedor proveedores[])
         proveedores[k].codigo = prov_codigo[k];
         strcpy(proveedores[k].descripcion, prov_descripcion[k]);
         proveedores[k].flag_estado = prov_flag_estado[k];
+    }
+    for (int l = 0; l<3; l++)
+    {
+        relaciones[l].codigoProducto = codigo;
+        relaciones[l].codigoProveedor = prov_codigo;
     }
 }
 
@@ -163,12 +167,13 @@ void modificar_producto(eProducto productos[])
 
     printf("MODIFICAR PRODUCTO...");
     printf("\nIngrese codigo de producto:");
-    scanf("%d",&codigo);
-    while ( codigo <=0 || isalpha(codigo)==1 )
+    gets(input);
+    while ( esNumerico(input) == 0 || atoi(input) <= 0 )
     {
         printf("\nIngrese un codigo de producto valido: ");
-        scanf("%d",&codigo);
+        gets(input);
     }
+    codigo = atoi(input);
     for (int j=0; j<10; j++)
     {
         if (productos[j].codigo == codigo && productos[j].flag_estado == 1 )
@@ -299,3 +304,22 @@ void informar_stock(eProducto productos[])
     printf("\nIMPORTE: %d", mayor.importe);
     printf("\nCODIGO PROVEEDOR: %d\n", mayor.codigoProveedor);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

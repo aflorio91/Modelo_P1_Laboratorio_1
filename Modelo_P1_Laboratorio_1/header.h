@@ -30,16 +30,16 @@ typedef struct
 int esSoloLetras(char str[]);
 
 /**
- * \brief Verifica si el valor recibido es numÃ©rico
+ * \brief Verifica si el valor recibido es numérico
  * \param str Array con la cadena a ser analizada
- * \return 1 si es nÃºmerico y 0 si no lo es
+ * \return 1 si es númerico y 0 si no lo es
  */
 int esNumerico(char str[]);
 
 /**
- * \brief Verifica si el valor recibido contiene solo letras y nÃºmeros
+ * \brief Verifica si el valor recibido contiene solo letras y números
  * \param str Array con la cadena a ser analizada
- * \return 1 si contiene solo espacio o letras y nÃºmeros, y 0 si no lo es
+ * \return 1 si contiene solo espacio o letras y números, y 0 si no lo es
  */
 int esAlfaNumerico(char str[]);
 

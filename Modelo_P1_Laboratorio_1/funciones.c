@@ -3,32 +3,40 @@
 #include <string.h>
 #include "header.h"
 
-int validarString(char palabra[]) // = 0 => mal
+int esSoloLetras(char str[])
 {
-    char name[100];
-    strcpy(palabra,name);
-    int retorno = 1;
-
-    for(int i=0; i<100; i++)
+    int i=0;
+    while(str[i] != '\0')
     {
-        if(isalpha(name[i] == 1))
-        {
-            retorno = 0;
-            break;
-        }
+        if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+            return 0;
+        i++;
     }
-    return retorno;
+    return 1;
 }
 
-int validar_entero(int unEntero)
+int esNumerico(char str[])
 {
-    int result = 0;
-
-    if (unEntero > 0  )
+    int i=0;
+    while(str[i] != '\0')
     {
-        result = 1;
+        if(str[i] < '0' || str[i] > '9')
+            return 0;
+        i++;
     }
-    return result;
+    return 1;
+}
+
+int esAlfaNumerico(char str[])
+{
+    int i=0;
+    while(str[i] != '\0')
+    {
+        if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+            return 0;
+        i++;
+    }
+    return 1;
 }
 
 void inicializar_arrays(eProducto productos[], eProveedor proveedores[])
@@ -70,6 +78,7 @@ void inicializar_arrays(eProducto productos[], eProveedor proveedores[])
 
 void alta_producto(eProducto productos[])
 {
+    char input[30];
     int codigo;
     char descripcion[100];
     int importe;
@@ -78,41 +87,51 @@ void alta_producto(eProducto productos[])
     int flag_estado;
 
     printf("ALTA DE PRODUCTO...");
+    fflush(stdin);
     printf("\nIngrese codigo de producto:");
-    scanf("%d",&codigo);
-    while ( codigo <=0 || isalpha(codigo)==1 )
+    gets(input);
+    while ( esNumerico(input) == 0 || atoi(input) <=0  )
     {
         printf("\nIngrese un codigo de producto valido: ");
-        scanf("%d",&codigo);
+        gets(input);
     }
+    codigo = atoi(input);
+
     printf("\nIngrese descripcion:");
+    fflush(stdin);
     gets(descripcion);
-    while ( validarString(descripcion) == 0 )
+    while ( esSoloLetras(descripcion) == 0 )
     {
-        printf("\nIngrese una descripcion valida: ");
+        printf("\nIngrese una descripcion valida:");
         gets(descripcion);
     }
+
     printf("\nIngrese importe:");
-    scanf("%d",&importe);
-    while ( importe <=0 || isalpha(importe)==1)
+    gets(input);
+    while ( esNumerico(input) == 0 || atoi(input) < 0 )
     {
         printf("\nIngrese un importe valido:");
-        scanf("%d",&importe);
+        gets(input);
     }
+    importe = atoi(input);
+
     printf("\nIngrese cantidad:");
-    scanf("%d",&cantidad);
-    while ( cantidad <0 || isalpha(cantidad)==1)
+    gets(input);
+    while ( atoi(input) <0 || esNumerico(input) == 0  )
     {
         printf("\nIngrese una cantidad valida:");
-        scanf("%d",&cantidad);
+        gets(input);
     }
+    cantidad = atoi(input);
+
     printf("\nIngrese codigo de proveedor:");
-    scanf("%d",&codigoProveedor);
-    while ( codigoProveedor <=0)
+    gets(input);
+    while ( esNumerico(input) == 0 || atoi(input) < 0 )
     {
         printf("\nIngrese un codigo de proveedor valido:");
-        scanf("%d",&codigoProveedor);
+        gets(input);
     }
+    codigoProveedor = atoi(input);
 
     for (int i=0; i<10; i++)
     {
@@ -131,6 +150,7 @@ void alta_producto(eProducto productos[])
 
 void modificar_producto(eProducto productos[])
 {
+    char input[30];
     int codigo;
     char descripcion[100];
     int importe;
@@ -162,13 +182,14 @@ void modificar_producto(eProducto productos[])
                 printf("\n5.-Terminar");
 
                 scanf("%d",&opcion);
+                fflush(stdin);
 
                 switch(opcion)
                 {
                 case 1:
                     printf("\nIngrese nueva descripcion:");
                     gets(descripcion);
-                    while ( validarString(descripcion) == 1 )
+                    while ( esSoloLetras(descripcion) == 0 )
                     {
                         printf("\nIngrese una  descripcion valida: ");
                         gets(descripcion);
@@ -177,33 +198,36 @@ void modificar_producto(eProducto productos[])
                     break;
                 case 2:
                     printf("\nIngrese nuevo codigo de proveedor:");
-                    scanf("%d",&codigoProveedor);
-                    while ( codigoProveedor <=0)
+                    gets(input);
+                    while ( esNumerico(input) == 0 || atoi(input) < 0 )
                     {
                         printf("\nIngrese un codigo de proveedor valido:");
-                        scanf("%d",&codigoProveedor);
+                        gets(input);
                     }
+                    codigoProveedor = atoi(input);
                     printf("\n");
                     productos[j].codigoProveedor = codigoProveedor;
                     break;
                 case 3:
                     printf("\nIngrese nuevo importe:");
-                    scanf("%d",&importe);
-                    while ( importe <=0 || isalpha(importe)==1)
+                    gets(input);
+                    while ( esNumerico(input) == 0 || atoi(input) < 0 )
                     {
                         printf("\nIngrese un importe valido:");
-                        scanf("%d",&importe);
+                        gets(input);
                     }
+                    importe = atoi(input);
                     productos[j].importe = importe;
                     break;
                 case 4:
                     printf("\nIngrese nueva cantidad:");
-                    scanf("%d",&cantidad);
-                    while ( cantidad <0 || isalpha(cantidad)==1)
+                    gets(input);
+                    while ( atoi(input) <0 || esNumerico(input) == 0  )
                     {
                         printf("\nIngrese una cantidad valida:");
-                        scanf("%d",&cantidad);
+                        gets(input);
                     }
+                    cantidad = atoi(input);
                     productos[j].cantidad = cantidad;
                     break;
                 case 5:
@@ -218,7 +242,6 @@ void modificar_producto(eProducto productos[])
         {
             printf("\nNo hubo coincidencias...");
         }
-
     }
 }
 
@@ -239,63 +262,40 @@ void baja_producto(eProducto productos[])
 
 void informar_stock(eProducto productos[])
 {
-    eProducto prod_mayor;
-    eProducto prod_menor;
+    eProducto mayor;
+    eProducto menor;
 
     for (int i=0; i<10; i++)
     {
-        for (int j=i+1; i<10; j++)
+        for (int j=i+1; j<9; j++)
         {
-            if (productos[i].cantidad < productos[j].cantidad)
+            if ( productos[i].cantidad > productos[j].cantidad && productos[i].flag_estado == 1 && productos[j].flag_estado == 1 )
             {
-                prod_mayor = productos[j];
-                productos[j] = productos[i];
-                productos[i] = prod_mayor;
+                mayor = productos[i];
             }
         }
     }
 
     for (int i=0; i<10; i++)
     {
-        if (productos[i].flag_estado == 1)
+        for (int j=i+1; j<9; j++)
         {
-            printf("\nCodigo: %d",productos[0].codigo);
-            printf("\nDescripcion: %s",productos[0].descripcion);
-            printf("\nImporte: %d",productos[0].importe);
-            printf("\Cantidad: %d",productos[0].cantidad);
-            printf("\nCodigo de proveedor: %s",productos[0].codigoProveedor);
-            break;
+            if ( productos[i].cantidad < productos[j].cantidad && productos[i].flag_estado == 1 && productos[j].flag_estado == 1  )
+            {
+                menor = productos[i];
+            }
         }
     }
-    for (int h=10; h>=0; h++)
-    {
-        if (productos[h].flag_estado == 1)
-        {
-            printf("\nCodigo: %d",productos[h].codigo);
-            printf("\nDescripcion: %s",productos[h].descripcion);
-            printf("\nImporte: %d",productos[h].importe);
-            printf("\Cantidad: %d",productos[h].cantidad);
-            printf("\nCodigo de proveedor: %s",productos[h].codigoProveedor);
-            break;
-        }
-    }
+    printf("\n****Producto con menor cantidad:****");
+    printf("\nCANTIDAD: %d", menor.cantidad );
+    printf("\nCODIGO: %d", menor.codigo);
+    printf("\nDESCRIPCION: %s", menor.descripcion);
+    printf("\nIMPORTE: %d", menor.importe);
+    printf("\nCODIGO PROVEEDOR: %d\n", menor.codigoProveedor);
+    printf("\n****Producto con mayor cantidad:****");
+    printf("\nCANTIDAD: %d", mayor.cantidad );
+    printf("\nCODIGO: %d", mayor.codigo);
+    printf("\nDESCRIPCION: %s", mayor.descripcion);
+    printf("\nIMPORTE: %d", mayor.importe);
+    printf("\nCODIGO PROVEEDOR: %d\n", mayor.codigoProveedor);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

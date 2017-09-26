@@ -12,7 +12,7 @@ int main()
     eProducto array_Productos[10];
     eProveedor array_Proveedores[10];
     eRelacion array_Relacion[100];
-    inicializar_arrays(array_Productos, array_Proveedores);
+    inicializar_arrays(array_Productos, array_Proveedores, array_Relacion);
 
     while( seguir == 's' )
     {
@@ -52,6 +52,7 @@ int main()
             break;
         case 5:
             system("cls");
+            listar_por_criterio(array_Productos,array_Proveedores,array_Relacion);
 
             printf("\n");
             break;

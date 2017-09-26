@@ -305,21 +305,58 @@ void informar_stock(eProducto productos[])
     printf("\nCODIGO PROVEEDOR: %d\n", mayor.codigoProveedor);
 }
 
+void listar_por_criterio(eProducto productos[], eProveedor proveedores[], eRelacion relaciones[])
+{
+    eProducto aux_producto;
+
+    printf("\n Ordenado por Código de Proveedor...\n");
+    for ( int i = 0; i<10; i++)
+    {
+        for ( int j = i+1; j<9; i++)
+        {
+            if ( productos[i].codigoProveedor > productos[j].codigoProveedor && productos[i].flag_estado == 1 && productos[j].flag_estado == 1 )
+            {
+                aux_producto = productos[i];
+                productos[i] = productos[j];
+                productos[j] = aux_producto;
+            }
+        }
+    }
+    for ( int k = 0; k<10; k++)
+    {
+        if ( productos[k].flag_estado == 1)
+        {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            printf("\nCODIGO: %d", productos[k].codigo);
+            printf("\nCANTIDAD: %d", productos[k].cantidad );
+            printf("\nDESCRIPCION: %s", productos[k].descripcion);
+            printf("\nIMPORTE: %d", productos[k].importe);
+            printf("\nCODIGO PROVEEDOR: %d\n", productos[k].codigoProveedor);
+        }
+    }
+    printf("\nOrdenado por Descripcion de Producto\n...");
+    for ( int i = 0; i<10; i++)
+    {
+        for ( int j = i+1; j<9; i++)
+        {
+            if ( strcmp(  productos[i].descripcion, productos[j].descripcion ) < 0 && productos[i].flag_estado == 1 && productos[j].flag_estado == 1 )
+            {
+                aux_producto = productos[i];
+                productos[i] = productos[j];
+                productos[j] = aux_producto;
+            }
+        }
+    }
+    for ( int k = 0; k<10; k++)
+    {
+        if ( productos[k].flag_estado == 1)
+        {
+            printf("\nDESCRIPCION: %s", productos[k].descripcion);
+            printf("\nCODIGO: %d", productos[k].codigo);
+            printf("\nCANTIDAD: %d", productos[k].cantidad );
+            printf("\nIMPORTE: %d", productos[k].importe);
+            printf("\nCODIGO PROVEEDOR: %d\n", productos[k].codigoProveedor);
+        }
+    }
+}

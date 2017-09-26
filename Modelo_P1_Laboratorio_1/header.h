@@ -30,16 +30,16 @@ typedef struct
 int esSoloLetras(char str[]);
 
 /**
- * \brief Verifica si el valor recibido es num�rico
+ * \brief Verifica si el valor recibido es numérico
  * \param str Array con la cadena a ser analizada
- * \return 1 si es n�merico y 0 si no lo es
+ * \return 1 si es númerico y 0 si no lo es
  */
 int esNumerico(char str[]);
 
 /**
- * \brief Verifica si el valor recibido contiene solo letras y n�meros
+ * \brief Verifica si el valor recibido contiene solo letras y números
  * \param str Array con la cadena a ser analizada
- * \return 1 si contiene solo espacio o letras y n�meros, y 0 si no lo es
+ * \return 1 si contiene solo espacio o letras y números, y 0 si no lo es
  */
 int esAlfaNumerico(char str[]);
 
@@ -49,7 +49,7 @@ int esAlfaNumerico(char str[]);
  * \param array de proveedores
  * \return VOID
  */
-void inicializar_arrays(eProducto productos[], eProveedor proveedores[]);
+void inicializar_arrays(eProducto productos[], eProveedor proveedores[], eRelacion relaciones[]);
 
 /**
  * \brief Pide por pantalla los datos de un producto a ser ingresado por teclado
@@ -78,6 +78,15 @@ void baja_producto(eProducto productos[]);
  * \return void
  */
 void informar_stock(eProducto productos[]);
+
+/**
+ * \brief Realizar ​un solo listado​​ de los datos ordenados por dos criterios Código de Proveedor (descendentemente).
+   Descripción de Producto (ascendentemente).
+ * \param
+ * \param
+ * \return VOID
+ */
+void listar_por_criterio(eProducto productos[], eProveedor proveedores[], eRelacion relaciones[]);
 
 
 #endif // HEADER_H_INCLUDED

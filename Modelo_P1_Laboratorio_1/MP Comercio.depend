@@ -13,11 +13,17 @@
 	<string.h>
 	"header.h"
 
-1506378944 source:e:\modelo_p1_laboratorio_1\main.c
+1506384150 source:e:\modelo_p1_laboratorio_1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"header.h"
 
-1506378944 e:\modelo_p1_laboratorio_1\header.h
+1506385592 e:\modelo_p1_laboratorio_1\header.h
+
+1506384310 source:e:\modelo_p1_laboratorio_1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"header.h"
 

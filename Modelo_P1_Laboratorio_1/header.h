@@ -9,6 +9,7 @@ typedef struct
     int codigoProveedor;
     int flag_estado;
 } eProducto;
+
 typedef struct
 {
     int codigo;

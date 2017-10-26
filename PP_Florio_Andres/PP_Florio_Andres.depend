@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1506993854 source:e:\pp_florio_andres\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lib.h"
+
+1506993866 e:\pp_florio_andres\lib.h
+
+1506993854 source:e:\pp_florio_andres\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lib.h"
+

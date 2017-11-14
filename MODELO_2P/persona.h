@@ -1,13 +1,12 @@
 #ifndef PERSONA_H_INCLUDED
 #define PERSONA_H_INCLUDED
-struct
+typedef struct// 20 40
 {
-    char name[20];
-    char eMail[40];
-    int black_listed;
-} typedef ePersona;
+    char name[100];
+    char eMail[100];
+}ePersona;
 
-int persona_isBlackListed(void* ePersonaA,void* ePersonaB);
+/*int persona_isBlackListed(void* ePersonaA,void* ePersonaB);*/
 void persona_print(ePersona* this);
 ePersona* persona_new(void);
 void persona_block(ePersona* this);

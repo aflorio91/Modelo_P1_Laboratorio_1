@@ -3,6 +3,7 @@
 #include "ArrayList.h"
 #include "persona.h"
 #include "parser.h"
+#include "listar.h"
 
 int main()
 {
@@ -10,8 +11,6 @@ int main()
     int opcion = 0;
     int flag;
 
-    //ArrayList* subLista;
-    //ePersona* auxPersona;
     ArrayList* lista = al_newArrayList();
     ArrayList* lista_negra = al_newArrayList();
 
@@ -42,6 +41,7 @@ int main()
         case 1:
             system("cls");
             flag = parser_destinatarios(f, lista);
+
             if(flag)
             {
                 printf("\nError al parsear archivo destinatarios\n\n");
@@ -69,13 +69,18 @@ int main()
             break;
         case 3:
             system("cls");
-            for (int i=0; i<1000; i++)
-            {
-                for(int h=0; h<1000; h++)
-                {
-                    if ( strcmp( lista->get(lista,i)), lista->get(lista,j)  )
-                    }
-            }
+
+
+            fflush(stdin);
+            break;
+        case 4:
+            system("cls");
+
+            fflush(stdin);
+            break;
+        case 5:
+            system("cls");
+            seguir = 'n';
 
             fflush(stdin);
             break;

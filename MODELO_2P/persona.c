@@ -3,7 +3,7 @@
 #include <string.h>
 #include "ArrayList.h"
 #include "persona.h"
-
+/*
 int persona_isBlackListed(void* ePersonaA,void* ePersonaB)
 {
     int retorno = 1;
@@ -14,7 +14,7 @@ int persona_isBlackListed(void* ePersonaA,void* ePersonaB)
         retorno = 0;
     }
     return retorno;
-}
+}*/
 
 void persona_print(ePersona* this)
 {
@@ -32,15 +32,14 @@ ePersona* persona_new(void)
     {
         strcpy(returnAux->name, "");
         strcpy(returnAux->eMail, "");
-        returnAux->black_listed = 0;
     }
     return returnAux;
 }
-
+/*
 void persona_block(ePersona* this)
 {
     if (this != NULL)
     {
         this->black_listed = 1;
     }
-}
+}*/

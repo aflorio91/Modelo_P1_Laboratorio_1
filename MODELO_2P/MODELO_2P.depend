@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1510614540 source:c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\listar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510614791 c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\arraylist.h
+
+1510612956 c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\persona.h
+
+1510613390 source:c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"persona.h"
+	"parser.h"
+	"listar.h"
+
+1510356608 c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\parser.h
+
+1510613322 c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\listar.h
+
+1510615229 source:c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510612956 source:c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510615049 source:c:\users\alumno\desktop\modelo de segundo parcial de laboratorio con arraylist\modelo_2p\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510615050 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510614792 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\arraylist.h
+
+1510614542 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\listar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510619056 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.h
+
+1510619146 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"persona.h"
+	"parser.h"
+	"listar.h"
+
+1510356608 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\parser.h
+
+1510613324 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\listar.h
+
+1510617522 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510619056 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+

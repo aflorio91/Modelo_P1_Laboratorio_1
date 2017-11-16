@@ -3,11 +3,12 @@
 #include <string.h>
 #include "ArrayList.h"
 #include "persona.h"
-void listar(ArrayList* pArrayListPersona)
+void listar(ArrayList* lista)
 {
-    for (int i = 0; i<pArrayListPersona->len(pArrayListPersona); i++)
+    printf("\n");
+    for (int i = 0; i<lista->len(lista); i++)
     {
-        printf("\n%s %s",((ePersona*)pArrayListPersona->get(pArrayListPersona,i))->name, ((ePersona*)pArrayListPersona->get(pArrayListPersona,i))->eMail );
-
+        printf( "%s %s \n",((ePersona*)lista->get(lista,i))->name, ((ePersona*)lista->get(lista,i))->eMail );
+        //persona_print( (ePersona*)lista->get(lista,i) );
     }
 }

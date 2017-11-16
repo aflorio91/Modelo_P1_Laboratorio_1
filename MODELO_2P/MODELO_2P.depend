@@ -57,9 +57,9 @@
 	"ArrayList.h"
 	"persona.h"
 
-1510619056 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.h
+1510619556 e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.h
 
-1510619146 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\main.c
+1510619556 source:e:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
@@ -84,4 +84,58 @@
 	<string.h>
 	"ArrayList.h"
 	"persona.h"
+
+1510615050 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510614792 f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\arraylist.h
+
+1510708050 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\listar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510707878 f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.h
+
+1510706798 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"persona.h"
+	"parser.h"
+	"listar.h"
+	"depurar.h"
+
+1510356608 f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\parser.h
+
+1510705320 f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\listar.h
+
+1510699482 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510707942 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"persona.h"
+
+1510707786 source:f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\depurar.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"persona.h"
+	"parser.h"
+	"listar.h"
+
+1510705320 f:\modelo de segundo parcial de laboratorio con arraylist v2\modelo_2p\depurar.h
 

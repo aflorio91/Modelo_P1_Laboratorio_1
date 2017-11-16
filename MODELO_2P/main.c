@@ -4,6 +4,7 @@
 #include "persona.h"
 #include "parser.h"
 #include "listar.h"
+#include "depurar.h"
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
 
     ArrayList* lista = al_newArrayList();
     ArrayList* lista_negra = al_newArrayList();
+    ArrayList* lista_depurada = al_newArrayList();
 
     if (lista == NULL || lista_negra == NULL)
     {
@@ -23,7 +25,7 @@ int main()
     FILE* f_blackList = fopen("black_list.csv","r");
     if(f == NULL)
     {
-        printf("No se pudo abrir el archivo");
+        printf("\nNo se pudo abrir el archivo...");
         exit(1);
     }
     while( seguir == 's' )
@@ -41,7 +43,6 @@ int main()
         case 1:
             system("cls");
             flag = parser_destinatarios(f, lista);
-
             if(flag)
             {
                 printf("\nError al parsear archivo destinatarios\n\n");
@@ -69,19 +70,19 @@ int main()
             break;
         case 3:
             system("cls");
-
-
+            depurar_listas(lista,lista_negra,lista_depurada);
+            //quitar_repetidos(lista_depurada);
             fflush(stdin);
             break;
         case 4:
             system("cls");
-
+            listar(lista_depurada);
             fflush(stdin);
             break;
         case 5:
             system("cls");
+            printf("\nSaliendo...\n");
             seguir = 'n';
-
             fflush(stdin);
             break;
         }

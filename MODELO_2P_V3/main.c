@@ -77,7 +77,7 @@ int main()
             break;
         case 4:
             system("cls");
-            listar(lista_depurada);
+            listar(lista);
             fflush(stdin);
             break;
         case 5:

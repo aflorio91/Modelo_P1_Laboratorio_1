@@ -32,17 +32,12 @@ int parser_destinatarios(FILE* pFile, ArrayList* pArrayListPersona)
 
 void listar(ArrayList* lista)
 {
-    printf("\n");
-    printf("***Listando***\n");
-    char* nombre;
-    char* mail;
-    int cant = al_len(lista);
-    for (int i = 0; i<cant; i++)
+    printf("\n***Listando***\n");
+    ePersona* unaPersona;
+    for(int i=0; i < lista->len(lista); i++)
     {
-        strcpy(nombre, ((ePersona*)lista->get(lista,i))->name );
-        strcpy(mail,  ((ePersona*)lista->get(lista,i))->eMail);
-        printf( "%s %s \n",nombre,mail);
-        //printf( "%s %s \n",((ePersona*)lista->get(lista,i))->name, ((ePersona*)lista->get(lista,i))->eMail );
+        unaPersona = (ePersona*)lista->get(lista, i);
+        persona_print(unaPersona);
     }
 }
 

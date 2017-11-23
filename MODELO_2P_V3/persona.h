@@ -11,4 +11,5 @@ char* persona_getEMail(ePersona* this);
 void persona_setEMail(ePersona* this, char* correo);
 void persona_print(ePersona* this);
 ePersona* persona_new(void);
+int comparar_persona(ePersona* pPersonaAlfa, ePersona* pPersonaBravo);
 #endif // PERSONA_H_INCLUDED

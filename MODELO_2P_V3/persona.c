@@ -34,9 +34,9 @@ void persona_setEMail(ePersona* this, char* correo)
 }
 void persona_print(ePersona* this)
 {
-    if(this !=NULL)
+    if(this != NULL)
     {
-        printf("%s %s \n", this->name, this->eMail);
+        printf("%s %s", this->name, this->eMail);
     }
 }
 
@@ -50,4 +50,18 @@ ePersona* persona_new(void)
         strcpy(returnAux->eMail, "");
     }
     return returnAux;
+}
+
+int comparar_persona(ePersona* pPersonaAlfa, ePersona* pPersonaBravo)
+{
+    int retorno = -2;
+
+    if ( pPersonaAlfa != NULL && pPersonaBravo != NULL )
+    {
+        if ( stricmp(pPersonaAlfa->name, pPersonaBravo->name) == 0  &&  stricmp(pPersonaAlfa->name, pPersonaBravo->name) == 0 )
+            {
+                retorno = 0;
+            }
+    }
+    return retorno;
 }

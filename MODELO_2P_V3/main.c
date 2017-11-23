@@ -19,11 +19,11 @@ int main()
         printf("\nNo se pudo reservar memoria...");
         exit(1);
     }
-    //FILE* f = fopen("destinatarios.csv","r");
-    //FILE* f_blackList = fopen("black_list.csv","r");
+    FILE* f = fopen("destinatarios.csv","r");
+    FILE* f_blackList = fopen("black_list.csv","r");
 
-    FILE* f = fopen("destinatarios corto.csv","r");
-    FILE* f_blackList = fopen("black_list corto.csv","r");
+    //FILE* f = fopen("destinatarios corto.csv","r");
+    //FILE* f_blackList = fopen("black_list corto.csv","r");
     if(f == NULL)
     {
         printf("\nNo se pudo abrir el archivo...");
@@ -43,7 +43,8 @@ int main()
         {
         case 1:
             system("cls");
-            flag = parser_destinatarios(f, lista);
+            printf("\n***CARGAR DESTINATARIOS***\n");
+            flag = parser_lista(f, lista);
             if(flag)
             {
                 printf("\nError al parsear archivo destinatarios\n\n");
@@ -57,7 +58,8 @@ int main()
             break;
         case 2:
             system("cls");
-            flag = parser_lista_negra(f_blackList, lista_negra);
+            printf("\n***CARGAR LISTA NEGRA***\n");
+            flag = parser_lista(f_blackList, lista_negra);
             if(flag)
             {
                 printf("\nError al parsear archivo black_list\n\n");
@@ -71,13 +73,14 @@ int main()
             break;
         case 3:
             system("cls");
-            depurar_listas(lista,lista_negra,lista_depurada);
-            //quitar_repetidos(lista_depurada);
+            printf("\n***DEPURAR***\n");
+            lista_depurada = depurar_lista(lista,lista_negra,lista_depurada);
             fflush(stdin);
             break;
         case 4:
             system("cls");
-            listar(lista);
+            printf("\n***LISTAR***\n");
+            listar(lista_depurada);
             fflush(stdin);
             break;
         case 5:

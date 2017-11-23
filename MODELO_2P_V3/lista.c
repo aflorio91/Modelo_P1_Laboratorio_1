@@ -5,122 +5,87 @@
 #include "persona.h"
 #include "lista.h"
 
-int parser_destinatarios(FILE* pFile, ArrayList* pArrayListPersona)
+int parser_lista(FILE* pFile, ArrayList* pArrayListPersona)
 {
-    char auxName[100];
-    char auxEMail[100];
+    int retorno = 1;
     ePersona* nuevaPersona;
 
     if (pFile == NULL || pArrayListPersona == NULL)
     {
-        return 1;
+        return retorno;
     }
     while(!feof(pFile))
     {
         nuevaPersona = persona_new();
         if (nuevaPersona != NULL)
         {
-            fscanf(pFile,"%s[^,],%s\n",auxName, auxEMail);
-            //fscanf(pFile,"%s[^,],%s[^\n]",auxName, auxEMail);
-            strcpy(nuevaPersona->name, auxName);
-            strcpy(nuevaPersona->eMail, auxEMail);
-            pArrayListPersona->add(pArrayListPersona, nuevaPersona);
-        }
-    }
-    return 0;
-}
-
-void listar(ArrayList* lista)
-{
-    printf("\n***Listando***\n");
-    ePersona* unaPersona;
-    for(int i=0; i < lista->len(lista); i++)
-    {
-        unaPersona = (ePersona*)lista->get(lista, i);
-        persona_print(unaPersona);
-    }
-}
-
-int parser_lista_negra(FILE* pFile, ArrayList* pArrayListPersona)
-{
-    char auxName[100];
-    char auxEMail[100];
-    ePersona* nuevaPersona;
-
-    if (pFile == NULL || pArrayListPersona == NULL)
-    {
-        return 1;
-    }
-    while(!feof(pFile))
-    {
-        nuevaPersona = persona_new();
-        if (nuevaPersona != NULL)
-        {
-            fscanf(pFile,"%s[^,],%s\n",auxName, auxEMail);
-            strcpy(nuevaPersona->name, auxName);
-            strcpy(nuevaPersona->eMail, auxEMail);
-            pArrayListPersona->add(pArrayListPersona, nuevaPersona);
-        }
-    }
-    return 0;
-}
-
-void depurar_listas(ArrayList* lista, ArrayList* lista_negra, ArrayList* lista_depurada)
-{
-    char auxName[100];
-    char auxEMail[100];
-    char auxName2[100];
-    char auxEMail2[100];
-    ePersona* auxPersona;
-
-    for (int i = 0; i<lista->len(lista); i++)
-    {
-        strcpy(auxName,((ePersona*)lista->get(lista,i))->name );
-        strcpy(auxEMail,((ePersona*)lista->get(lista,i))->eMail );
-
-        for (int j = 0; j<lista_negra->len(lista_negra); j++)
-        {
-            strcpy(auxName2,((ePersona*)lista_negra->get(lista_negra,j))->name );
-            strcpy(auxEMail2,((ePersona*)lista_negra->get(lista_negra,j))->eMail );
-
-            if ( strcmp(auxName,auxName2)==0 && strcmp(auxEMail,auxEMail2)==0 )
+            fscanf(pFile,"%[^,],%[^\n]\n",nuevaPersona->name,nuevaPersona->eMail);
+            if ( pArrayListPersona->add(pArrayListPersona, nuevaPersona) == -1 )
             {
+                retorno = 1;
                 break;
             }
             else
             {
-                if (auxPersona != NULL)
-                {
-                    auxPersona = persona_new();
-                    auxPersona = (ePersona*)lista->get(lista,i);
-                    lista_depurada->set(lista_depurada,i,auxPersona);
-                }
+                retorno = 0;
             }
         }
     }
+    return retorno;
+}
+
+void listar(ArrayList* lista)
+{
+    ePersona* unaPersona;
+    for(int i=0; i < al_len(lista); i++)
+    {
+        unaPersona = (ePersona*)lista->get(lista, i);
+        persona_print(unaPersona);
+        printf("\n");
+    }
+}
+
+int isBlackListed(ePersona* unaPersona, ArrayList* lista_negra)
+{
+    int retorno = -1;
+    ePersona* auxPersona = (ePersona*) unaPersona;
+    ArrayList* listaNegra = (ArrayList*) lista_negra;
+
+    if(auxPersona != NULL && listaNegra != NULL)
+    {
+        retorno = 1; //no esta en la lista negra
+        for (int i = 0; i<al_len(listaNegra); i++)
+        {
+            ePersona* auxPersonaListaNegra = al_get(listaNegra,i);
+            if ( strcmp(auxPersonaListaNegra->eMail, auxPersona->eMail) ==0 )
+            {
+                retorno = 0; //Devuelve 0 si esta en la lista negra y no hay que agregarlo a la lista depurada
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+ArrayList* depurar_lista(ArrayList* lista_destinatarios, ArrayList* lista_negra, ArrayList* lista_depurada )
+{
+    ePersona* auxPersona;
+    ArrayList* destinatarios = (ArrayList*) lista_destinatarios;
+    ArrayList* listaNegra = (ArrayList*) lista_negra;
+    ArrayList* listaDepurada = (ArrayList*) lista_depurada;
+
+    for ( int i=0; i<al_len(destinatarios); i++)
+    {
+        auxPersona = al_get(destinatarios,i);
+        if ( isBlackListed(auxPersona,listaNegra) == 1 )
+        {
+            al_add(listaDepurada,auxPersona);
+        }
+    }
+    return listaDepurada;
 }
 
 void quitar_repetidos(ArrayList* lista_depurada)
 {
-    char auxName[100];
-    char auxEMail[100];
-    char auxName2[100];
-    char auxEMail2[100];
-
-    for (int i = 0; i<lista_depurada->len(lista_depurada); i++)
-    {
-        strcpy(auxName,((ePersona*)lista_depurada->get(lista_depurada,i))->name );
-        strcpy(auxEMail,((ePersona*)lista_depurada->get(lista_depurada,i))->eMail );
-
-        for (int j = i+1; j<lista_depurada->len(lista_depurada); j++)
-        {
-            strcpy(auxName2,((ePersona*)lista_depurada->get(lista_depurada,j))->name );
-            strcpy(auxEMail2,((ePersona*)lista_depurada->get(lista_depurada,j))->eMail );
-
-            if ( strcmp(auxName,auxName2)==0 && strcmp(auxEMail,auxEMail2)==0 )
-            {
-                al_remove(lista_depurada, j);
-            }
-        }
-    }
+    return;
 }

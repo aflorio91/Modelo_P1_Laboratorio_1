@@ -89,3 +89,23 @@ void quitar_repetidos(ArrayList* lista_depurada)
 {
     return;
 }
+
+int crear_archivo_lista_depurada(ArrayList* lista_depurada)
+{
+    int i, retorno = 1;
+    ePersona* pPersona = NULL;
+
+    FILE* LISTA_DEPURADAtxt = fopen ("LISTA_DEPURADA.txt", "w");
+
+    if( LISTA_DEPURADAtxt != NULL )
+    {
+        for(i=0; i<al_len(lista_depurada); i++)
+        {
+            pPersona = al_get(lista_depurada, i);
+            fprintf(LISTA_DEPURADAtxt,"%s,%s\n", pPersona->name, pPersona->eMail);
+            retorno = 0;
+        }
+    }
+    fclose (LISTA_DEPURADAtxt);
+    return retorno;
+}

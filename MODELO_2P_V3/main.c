@@ -36,6 +36,7 @@ int main()
         printf("3- DEPURAR\n");
         printf("4- LISTAR\n");
         printf("5- Salir\n");
+        printf("6- Generar archivo con lista depurada\n");
 
         scanf("%d",&opcion);
 
@@ -87,6 +88,19 @@ int main()
             system("cls");
             printf("\nSaliendo...\n");
             seguir = 'n';
+            fflush(stdin);
+            break;
+        case 6:
+            system("cls");
+            flag = crear_archivo_lista_depurada(lista_depurada);
+            if(flag)
+            {
+                printf("\nError al crear el archivo de lista depurada\n\n");
+            }
+            else
+            {
+                printf("\nArchivo lista depurada creado con exito\n\n");
+            }
             fflush(stdin);
             break;
         }

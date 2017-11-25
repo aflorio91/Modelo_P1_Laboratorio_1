@@ -7,7 +7,7 @@
 
 1511048596 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\arraylist.h
 
-1511480163 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\lista.c
+1511568752 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\lista.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -17,10 +17,10 @@
 
 1511476351 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\persona.h
 
-1511480163 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\lista.h
+1511567907 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\lista.h
 	"ArrayList.h"
 
-1511451335 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\main.c
+1511567907 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\modelo_2p_v3\modelo_2p_v3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"persona.h"

@@ -104,58 +104,38 @@ int completar_lista(ArrayList* lista)
     }
     return retorno;
 }
-int ordernar_lista(ArrayList* lista, ArrayList* lista_depurada)
+ArrayList* ordernar_lista(ArrayList* lista, ArrayList* lista_depurada)
 {
-    int retorno = 1;
     eNumero* auxNumero;
-    eNumero* numero_mayor;
-    int numero1,numero2;
-    int flag = 0;
+    eNumero* auxNumero2;
+    ArrayList* unSorted_list = (ArrayList*) lista;
+    ArrayList* sorted_list = (ArrayList*) lista_depurada;
+    int i,j;
 
-    if ( lista != NULL && lista_depurada != NULL )
+    if ( unSorted_list != NULL && sorted_list != NULL )
     {
-        for(int i=0; i<lista->len(lista); i++)
+        if(auxNumero != NULL && auxNumero2 != NULL)
         {
-            auxNumero = lista->get(lista,i);
-            if (flag == 0)
+            for( i=0; i<unSorted_list->len(unSorted_list); i++)
             {
-                numero_mayor = auxNumero;
-            }
-            if(auxNumero != NULL)
-            {
-                //printf("\nLLEGA");
-                numero1 = numero_getNumero(auxNumero);
-                numero2 = numero_getNumero(numero_mayor);
-                if ( numero1 < numero2 || flag == 0)
+                auxNumero = (eNumero*)unSorted_list->get(unSorted_list,i);
+                for( j=i+1; j<unSorted_list->len(unSorted_list); j++)
                 {
-                    numero_mayor == auxNumero;
-                    flag = 1;
+                    //printf("\nValor1 %d valor2 %d",numero_getNumero(auxNumero),numero_getNumero(auxNumero2));
+                    auxNumero2 = (eNumero*)unSorted_list->get(unSorted_list,j);
+                    if ( numero_compare(auxNumero,auxNumero2) == -1 )
+                    {
+                        sorted_list->add(sorted_list,auxNumero);
+                    }
+                    else if( numero_compare(auxNumero,auxNumero2) == 1 )
+                    {
+                        sorted_list->add(sorted_list,auxNumero2);
+                    }
                 }
-            }
-            lista->add(lista_depurada,numero_mayor);
-            if (i == lista->len(lista) - 1)
-            {
-                retorno = 0;
             }
         }
     }
-    return retorno;
+    return sorted_list;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

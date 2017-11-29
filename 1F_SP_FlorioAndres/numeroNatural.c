@@ -131,16 +131,20 @@ int esPrimo(int unNumero )
 }
 int numero_compare(eNumero* numero1, eNumero* numero2)
 {
-    int retorno = 0;
+    int retorno = -2;
     if (numero1 != NULL && numero2 != NULL)
     {
-        if (numero1->numero < numero2->numero)
+        if (numero_getNumero(numero1) < numero_getNumero(numero2) )
         {
             retorno = -1;
         }
         else
         {
             retorno = 1;
+        }
+        if (numero_getNumero(numero1) == numero_getNumero(numero2) )
+        {
+            retorno = 0;
         }
     }
     return retorno;

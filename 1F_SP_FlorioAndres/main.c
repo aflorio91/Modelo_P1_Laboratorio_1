@@ -11,9 +11,9 @@ int main()
     int flag;
 
     ArrayList* lista_numeros = al_newArrayList();
-    ArrayList* lista_depurada = al_newArrayList();
+    ArrayList* lista_ordenada = al_newArrayList();
 
-    if (lista_numeros == NULL)
+    if (lista_numeros == NULL && lista_ordenada != NULL)
     {
         printf("\nNo se pudo reservar memoria...");
         exit(1);
@@ -68,16 +68,9 @@ int main()
         case 3:
             system("cls");
             printf("\n***ORDENAR***\n");
-            flag = ordernar_lista(lista_numeros, lista_depurada);
-            if (flag)
-            {
-                printf("\nError al ordenar la lista de numeros\n\n");
-            }
-            else
-            {
-                printf("\nLista ordenada con exito\n\n");
-            }
-            //listar(lista_depurada);
+            lista_ordenada = ordernar_lista(lista_numeros, lista_ordenada);
+
+            listar(lista_ordenada);
             fflush(stdin);
             break;
         case 4:
@@ -92,7 +85,7 @@ int main()
             break;
         case 6:
             system("cls");
-            listar(lista_numeros);
+
             fflush(stdin);
             break;
         }

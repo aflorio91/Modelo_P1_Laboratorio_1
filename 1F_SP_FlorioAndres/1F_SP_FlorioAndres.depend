@@ -33,3 +33,37 @@
 	"ArrayList.h"
 	"numeroNatural.h"
 
+1511048362 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1511048598 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\arraylist.h
+
+1511995049 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\main.c
+	<stdio.h>
+	<stdlib.h>
+	"numeroNatural.h"
+	"funciones.h"
+	"ArrayList.h"
+
+1511912244 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\numeronatural.h
+
+1511913654 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.h
+	"ArrayList.h"
+
+1511996045 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\numeronatural.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"numeroNatural.h"
+
+1511996681 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"numeroNatural.h"
+	"ArrayList.h"
+

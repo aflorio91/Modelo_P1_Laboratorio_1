@@ -63,14 +63,10 @@ int completar_lista(ArrayList* lista)
     eNumero* auxNumero;
     int valor;
 
-    //printf("\nprincipio");
     if (lista != NULL)
     {
-        //printf("\ndentro del if");
         for (int i = 0; i<lista->len(lista); i++)
         {
-            //printf("\ndentro while iteracion %d",i);
-            //printf("\nlen %d",lista->len(lista));
             auxNumero = lista->get(lista,i);
 
             if (auxNumero != NULL)
@@ -79,7 +75,6 @@ int completar_lista(ArrayList* lista)
 
                 if (esPar(valor) == 0)
                 {
-                    //printf("\nVALOR: %d", valor);
                     numero_setPar(auxNumero,1);
                     numero_setImpar(auxNumero,0);
                 }
@@ -90,7 +85,6 @@ int completar_lista(ArrayList* lista)
                 }
                 if (esPrimo(valor) == 1)
                 {
-                    //printf("\nLLEGA");
                     numero_setPrimo(auxNumero,1);
                 }
                 else
@@ -111,5 +105,25 @@ void ordernar_lista(ArrayList* lista )
         lista->sort(lista,numero_compare,1);
     }
 }
+void quitarRepetidos_lista(ArrayList* lista)
+{
+    eNumero* auxNumero;
+    eNumero* auxNumero2;
+    int i,j;
 
-
+    if ( lista != NULL  )
+    {
+        for (i = 0; i<lista->len(lista); i++)
+        {
+            auxNumero = (eNumero*)lista->get(lista,i);
+            for ( j = i+1; j<lista->len(lista); j++ )
+            {
+                auxNumero2 = (eNumero*)lista->get(lista,j);
+                if ( numero_compare(auxNumero,auxNumero2) == 0)
+                {
+                    lista->remove(lista,j);
+                }
+            }
+        }
+    }
+}

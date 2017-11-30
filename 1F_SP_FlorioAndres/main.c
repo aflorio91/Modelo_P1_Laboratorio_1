@@ -11,9 +11,8 @@ int main()
     int flag;
 
     ArrayList* lista_numeros = al_newArrayList();
-    ArrayList* lista_ordenada = al_newArrayList();
 
-    if (lista_numeros == NULL && lista_ordenada != NULL)
+    if (lista_numeros == NULL )
     {
         printf("\nNo se pudo reservar memoria...");
         exit(1);
@@ -32,7 +31,6 @@ int main()
         printf("3- ORDENAR\n");
         printf("4- INFORMAR\n");
         printf("5- Salir\n");
-        printf("6- \n");
 
         scanf("%d",&opcion);
 
@@ -69,7 +67,9 @@ int main()
             system("cls");
             printf("\n***ORDENAR***\n");
             ordernar_lista(lista_numeros);
+            quitarRepetidos_lista(lista_numeros);
             listar(lista_numeros);
+            printf("\n");
             fflush(stdin);
             break;
         case 4:

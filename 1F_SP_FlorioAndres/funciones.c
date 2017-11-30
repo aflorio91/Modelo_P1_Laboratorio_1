@@ -104,38 +104,12 @@ int completar_lista(ArrayList* lista)
     }
     return retorno;
 }
-ArrayList* ordernar_lista(ArrayList* lista, ArrayList* lista_depurada)
+void ordernar_lista(ArrayList* lista )
 {
-    eNumero* auxNumero;
-    eNumero* auxNumero2;
-    ArrayList* unSorted_list = (ArrayList*) lista;
-    ArrayList* sorted_list = (ArrayList*) lista_depurada;
-    int i,j;
-
-    if ( unSorted_list != NULL && sorted_list != NULL )
+    if ( lista != NULL )
     {
-        if(auxNumero != NULL && auxNumero2 != NULL)
-        {
-            for( i=0; i<unSorted_list->len(unSorted_list); i++)
-            {
-                auxNumero = (eNumero*)unSorted_list->get(unSorted_list,i);
-                for( j=i+1; j<unSorted_list->len(unSorted_list); j++)
-                {
-                    //printf("\nValor1 %d valor2 %d",numero_getNumero(auxNumero),numero_getNumero(auxNumero2));
-                    auxNumero2 = (eNumero*)unSorted_list->get(unSorted_list,j);
-                    if ( numero_compare(auxNumero,auxNumero2) == -1 )
-                    {
-                        sorted_list->add(sorted_list,auxNumero);
-                    }
-                    else if( numero_compare(auxNumero,auxNumero2) == 1 )
-                    {
-                        sorted_list->add(sorted_list,auxNumero2);
-                    }
-                }
-            }
-        }
+        lista->sort(lista,numero_compare,1);
     }
-    return sorted_list;
 }
 
 

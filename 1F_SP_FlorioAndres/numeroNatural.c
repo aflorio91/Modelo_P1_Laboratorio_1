@@ -129,25 +129,17 @@ int esPrimo(int unNumero )
     }
     return retorno;
 }
-int numero_compare(eNumero* numero1, eNumero* numero2)
+int numero_compare(eNumero* numeroAlfa, eNumero* numeroBeta)
 {
-    int retorno = -2;
-    if (numero1 != NULL && numero2 != NULL)
+    if ( ((eNumero*)numeroAlfa)->numero >((eNumero*)numeroBeta)->numero )
     {
-        if (numero_getNumero(numero1) < numero_getNumero(numero2) )
-        {
-            retorno = -1;
-        }
-        else
-        {
-            retorno = 1;
-        }
-        if (numero_getNumero(numero1) == numero_getNumero(numero2) )
-        {
-            retorno = 0;
-        }
+        return 1;
     }
-    return retorno;
+    if ( ((eNumero*)numeroAlfa)->numero < ((eNumero*)numeroBeta)->numero )
+    {
+        return -1;
+    }
+    return 0;
 }
 
 

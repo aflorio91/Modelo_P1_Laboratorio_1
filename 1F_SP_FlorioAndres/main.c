@@ -18,7 +18,7 @@ int main()
         printf("\nNo se pudo reservar memoria...");
         exit(1);
     }
-    FILE* f = fopen("datos2.csv","r");
+    FILE* f = fopen("datos.csv","r");
 
     if(f == NULL)
     {
@@ -32,7 +32,7 @@ int main()
         printf("3- ORDENAR\n");
         printf("4- INFORMAR\n");
         printf("5- Salir\n");
-        printf("6- Listar lista_numeros\n");
+        printf("6- \n");
 
         scanf("%d",&opcion);
 
@@ -68,9 +68,8 @@ int main()
         case 3:
             system("cls");
             printf("\n***ORDENAR***\n");
-            lista_ordenada = ordernar_lista(lista_numeros, lista_ordenada);
-
-            listar(lista_ordenada);
+            ordernar_lista(lista_numeros);
+            listar(lista_numeros);
             fflush(stdin);
             break;
         case 4:

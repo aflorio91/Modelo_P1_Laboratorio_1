@@ -23,5 +23,5 @@ eNumero* numero_new(void);
 void numero_print(eNumero* this);
 int esPar(int unNumero);
 int esPrimo(int unNumero);
-int numero_compare(eNumero* numero1, eNumero* numero2);
+int numero_compare(eNumero* numeroAlfa, eNumero* numeroBeta);
 #endif // NUMERONATURAL_H_INCLUDED

@@ -115,15 +115,59 @@ void quitarRepetidos_lista(ArrayList* lista)
     {
         for (i = 0; i<lista->len(lista); i++)
         {
-            auxNumero = (eNumero*)lista->get(lista,i);
+            auxNumero = lista->get(lista,i);
             for ( j = i+1; j<lista->len(lista); j++ )
             {
-                auxNumero2 = (eNumero*)lista->get(lista,j);
+                auxNumero2 = lista->get(lista,j);
                 if ( numero_compare(auxNumero,auxNumero2) == 0)
                 {
                     lista->remove(lista,j);
+                    //j--;
                 }
             }
         }
     }
 }
+void informar(ArrayList* lista)
+{
+    int contCeros = 0;
+    int contPares = 0;
+    int contImpares = 0;
+    int contPrimos = 0;
+    int par;
+    int impar;
+    int primo;
+    eNumero* auxNumero;
+
+    if (lista != NULL)
+    {
+        for (int i = 0; i< lista->len(lista); i++)
+        {
+            auxNumero = lista->get(lista,i);
+
+            if (auxNumero != NULL)
+            {
+                par = numero_getPar(auxNumero);
+                impar = numero_getImpar(auxNumero);
+                primo = numero_getPrimo(auxNumero);
+
+                if ( par == 1)
+                {
+                    contPares++;
+                }
+                else
+                {
+                    contImpares++;
+                }
+                if ( primo == 1)
+                {
+                    contPrimos++;
+                }
+            }
+        }
+    }
+    printf("\nCANTIDAD DE PARES: %d",contPares);
+    printf("\nCANTIDAD DE IMPARES: %d",contImpares);
+    printf("\nCANTIDAD DE PRIMOS: %d\n",contPrimos);
+}
+

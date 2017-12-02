@@ -141,15 +141,3 @@ int numero_compare(eNumero* numeroAlfa, eNumero* numeroBeta)
     }
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-

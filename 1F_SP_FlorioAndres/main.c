@@ -11,8 +11,9 @@ int main()
     int flag;
 
     ArrayList* lista_numeros = al_newArrayList();
+    ArrayList* lista_final = al_newArrayList();
 
-    if (lista_numeros == NULL )
+    if (lista_numeros == NULL && lista_final != NULL )
     {
         printf("\nNo se pudo reservar memoria...");
         exit(1);
@@ -65,7 +66,7 @@ int main()
             break;
         case 3:
             system("cls");
-            printf("\n***ORDENAR***\n");
+            printf("\n***ORDENAR y QUITAR REPETIDOS***\n");
             ordernar_lista(lista_numeros);
             quitarRepetidos_lista(lista_numeros);
             listar(lista_numeros);
@@ -74,6 +75,8 @@ int main()
             break;
         case 4:
             system("cls");
+            printf("\n***INFORMAR***\n");
+            informar(lista_numeros);
             fflush(stdin);
             break;
         case 5:

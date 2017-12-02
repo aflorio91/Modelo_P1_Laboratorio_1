@@ -41,7 +41,7 @@
 
 1511048598 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\arraylist.h
 
-1512074935 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\main.c
+1512253867 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\main.c
 	<stdio.h>
 	<stdlib.h>
 	"numeroNatural.h"
@@ -50,17 +50,17 @@
 
 1512070163 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\numeronatural.h
 
-1512072696 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.h
+1512253867 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.h
 	"ArrayList.h"
 
-1512070302 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\numeronatural.c
+1512254297 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\numeronatural.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayList.h"
 	"numeroNatural.h"
 
-1512074448 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.c
+1512254297 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_florioandres\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

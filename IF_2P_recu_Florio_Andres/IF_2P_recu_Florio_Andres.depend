@@ -41,22 +41,29 @@
 
 1511048598 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\arraylist.h
 
-1512692688 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\electra.c
+1512787270 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\electra.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayList.h"
 	"Electra.h"
 
-1512694022 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\electra.h
+1512787170 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\electra.h
 
-1512702915 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\main.c
+1512786518 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Electra.h"
 	"funciones.h"
 	"ArrayList.h"
 
-1512694022 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\funciones.h
+1512786518 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\funciones.h
+	"ArrayList.h"
+
+1512787012 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\if_2p_recu_florio_andres\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Electra.h"
 	"ArrayList.h"
 

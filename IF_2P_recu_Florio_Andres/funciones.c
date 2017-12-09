@@ -7,7 +7,7 @@ int parser_Letra(FILE* pFile, ArrayList* lista)
 {
     int retorno = 1;
     char auxLetra[10];
-    char auxNombre[21];
+    char auxNombre[51];
     char auxVocal[10];
     char auxConsonante[10];
     eLetra* nuevaLetra;
@@ -25,11 +25,16 @@ int parser_Letra(FILE* pFile, ArrayList* lista)
         if(nuevaLetra != NULL)
         {
             fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",auxLetra,auxNombre,auxVocal,auxConsonante);
-
-            nuevaLetra->letra = auxLetra[0];
+            strcpy(nuevaLetra->letra, auxLetra);
             strcpy(nuevaLetra->nombre, auxNombre);
             nuevaLetra->vocal = atoi(auxVocal);
             nuevaLetra->consonante = atoi(auxConsonante);
+
+            /*
+                        nuevaLetra->letra = auxLetra[0];
+                        strcpy(nuevaLetra->nombre, auxNombre);
+                        nuevaLetra->vocal = atoi(auxVocal);
+                        nuevaLetra->consonante = atoi(auxConsonante);*/
 
             if ( lista->add(lista, nuevaLetra) == -1 )
             {
@@ -122,7 +127,6 @@ void quitar_repetidos(ArrayList* lista)
                 if ( letra_compare(auxLetra,lista+j) == 0)
                 {
                      lista->remove(lista,j);
-                     largo--;
                 }
                 else
                 {
@@ -144,7 +148,7 @@ void quitar_repetidos(ArrayList* lista) //version Mage
         for (i = 0; i<lista->len(lista); i++)
         {
             auxLetra = lista->get(lista,i);
-            for ( j = i+1; j<lista->len(lista); )
+            for ( j = i+1; j<lista->len(lista);)
             {
                 auxLetra2 = lista->get(lista,j);
                 if ( letra_compare(auxLetra,auxLetra2) == 0)
@@ -152,7 +156,9 @@ void quitar_repetidos(ArrayList* lista) //version Mage
                     lista->remove(lista,j);
                 }
                 else
+                {
                     j++;
+                }
             }
         }
     }

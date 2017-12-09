@@ -32,5 +32,5 @@ void ordenar_lista_descendente(ArrayList* lista);
  * \return
  */
 void quitar_repetidos(ArrayList* lista);
-void comprobar_lista(ArrayList* lista);
+
 #endif // FUNCIONES_H_INCLUDED

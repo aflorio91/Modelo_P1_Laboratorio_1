@@ -22,7 +22,8 @@ eLetra* letra_new(void)
     returnAux = (eLetra*)malloc(sizeof(eLetra));
     if (returnAux != NULL)
     {
-        returnAux->letra = '\0';
+        strcpy(returnAux->letra, "");
+        /*returnAux->letra = '\0';*/
         strcpy(returnAux->nombre, "");
         returnAux->vocal = 0;
         returnAux->consonante = 0;
@@ -33,7 +34,7 @@ void letra_print(eLetra* this)
 {
     if(this != NULL)
     {
-        printf("%c %s %d %d", this->letra, this->nombre, this->vocal, this->consonante);
+        printf("%s %s %d %d", this->letra, this->nombre, this->vocal, this->consonante);
     }
 }
 char* letra_getLetra(eLetra* this)

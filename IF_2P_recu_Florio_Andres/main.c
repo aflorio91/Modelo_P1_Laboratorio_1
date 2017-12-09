@@ -33,7 +33,7 @@ int main()
         printf("2.- COMPLETAR\n");
         //se ingresa un string y se comprueba q las letras esten en la lista
         printf("3.- COMPROBAR\n");
-        printf("4.- LISTA ORDENADA DE MANERA DESCENDENTE CON SOLO REPETIDOS\n");
+        //printf("4.- LISTA ORDENADA DE MANERA DESCENDENTE CON SOLO REPETIDOS\n");
         printf("5.- LISTA ORDENADA DE MANERA ASCENDENTE SIN REPETIDOS\n");
         printf("6.- LISTAR\n");
         printf("9.- Salir\n");
@@ -74,7 +74,7 @@ int main()
         case 3:
             system("cls");
             printf("***COMPROBAR***\n");
-            comprobar_lista(lista_letras);
+
             fflush(stdin);
             break;
         case 4:

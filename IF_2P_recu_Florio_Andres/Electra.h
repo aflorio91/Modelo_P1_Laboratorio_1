@@ -2,7 +2,7 @@
 #define ELECTRA_H_INCLUDED
 typedef struct
 {
-    char letra;
+    char letra[2];
     char nombre[21];
     int vocal;
     int consonante;

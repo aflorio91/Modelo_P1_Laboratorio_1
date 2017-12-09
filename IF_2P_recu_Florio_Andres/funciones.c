@@ -49,7 +49,7 @@ void listar(ArrayList* lista)
     eLetra* unaLetra;
     if ( lista != NULL)
     {
-        printf("letra, nombre, vocal, consonante\n");
+        printf("\nletra, nombre, vocal, consonante\n");
         for(int i=0; i < al_len(lista); i++)
         {
             //printf("\nINDICE: %d ",i);
@@ -106,8 +106,34 @@ void ordenar_lista_descendente(ArrayList* lista)
     {
         lista->sort(lista,letra_compare,0);
     }
-}
+}/*
 void quitar_repetidos(ArrayList* lista)
+{
+    eLetra* auxLetra;
+    int largo = lista->len(lista);
+
+    if ( lista != NULL  )
+    {
+        for (int i = 0; i<largo; i++)
+        {
+            auxLetra = lista->get(lista,i);
+            for (int j = i+1; j<largo; )
+            {
+                if ( letra_compare(auxLetra,lista+j) == 0)
+                {
+                     lista->remove(lista,j);
+                     largo--;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+            lista->add(lista,auxLetra);
+        }
+    }
+}*/
+void quitar_repetidos(ArrayList* lista) //version Mage
 {
     eLetra* auxLetra;
     eLetra* auxLetra2;
@@ -118,71 +144,19 @@ void quitar_repetidos(ArrayList* lista)
         for (i = 0; i<lista->len(lista); i++)
         {
             auxLetra = lista->get(lista,i);
-            for ( j = i+1 ; j<lista->len(lista); )
+            for ( j = i+1; j<lista->len(lista); )
             {
                 auxLetra2 = lista->get(lista,j);
                 if ( letra_compare(auxLetra,auxLetra2) == 0)
                 {
-                    // lista->remove(lista,j);
+                    lista->remove(lista,j);
                 }
                 else
-                {
                     j++;
-                }
             }
         }
     }
 }
-void comprobar_lista(ArrayList* lista)
-{
-    fflush(stdin);
-    char palabra[30];
-    char letter;
-    int largo;
-    ArrayList* aux_lista = lista->clone(lista);
-    ArrayList* existe = al_newArrayList();
-    eLetra* auxLetra;
-    printf("\nLLEGA");
-    if ( lista != NULL)
-    {
-        printf("\nIngrese palabra por teclado...\n");
-        gets(palabra);
-        while(esSoloLetras(palabra)== 0  )
-        {
-            printf("\npalabra no valida. Ingrese una palabra de solo letras ( entre 2 y 29 carateres)...\n");
-            gets(palabra);
-        }
-        printf("\nLLEGA2222");
-        largo = strlen(palabra);
-        for (int i = 0; i<largo; i++)
-        {
-            letter = palabra[i];
-            for (int j=0; j<lista->len(lista); j++)
-            {
-                printf("\nLLEGA333");
-                auxLetra = lista->get(lista,j);
-                if (auxLetra != NULL && existe != NULL)
-                {
-                    if ( letter == auxLetra->letra )
-                    {
-                        existe->add(auxLetra);
-                        printf("\nindice: %d",j);
-                    }
-                }
-            }
-        }
-        listar(existe);
-    }
-}
-
-
-
-
-
-
-
-
-
 
 
 

@@ -11,8 +11,8 @@ int main()
     int flag;
 
     ArrayList* lista_letras = al_newArrayList();
-    ArrayList* lista_nueva = al_newArrayList();
-    ArrayList* lista_nueva2 = al_newArrayList();
+    ArrayList* lista_repetidos = al_newArrayList();
+    ArrayList* lista_unicos = al_newArrayList();
 
     if (lista_letras == NULL  )
     {
@@ -31,6 +31,7 @@ int main()
     {
         printf("1.- LEER\n");
         printf("2.- COMPLETAR\n");
+        //se ingresa un string y se comprueba q las letras esten en la lista
         printf("3.- COMPROBAR\n");
         printf("4.- LISTA ORDENADA DE MANERA DESCENDENTE CON SOLO REPETIDOS\n");
         printf("5.- LISTA ORDENADA DE MANERA ASCENDENTE SIN REPETIDOS\n");
@@ -52,7 +53,7 @@ int main()
             {
                 printf("\nArchivo letras cargado con exito\n\n");
             }
-
+            listar(lista_letras);
             fflush(stdin);
             break;
         case 2:
@@ -67,6 +68,7 @@ int main()
             {
                 printf("\nLista completada con exito\n\n");
             }
+            listar(lista_letras);
             fflush(stdin);
             break;
         case 3:
@@ -78,17 +80,18 @@ int main()
         case 4:
             system("cls");
             printf("***LISTA NUEVA ORDENADA DE MANERA DESCENDENTE CON REPETIDOS***\n");
-            lista_nueva = lista_letras->clone(lista_letras);
-            ordenar_lista_descendente(lista_nueva);
-            listar(lista_nueva);
+            lista_repetidos = lista_letras->clone(lista_letras);
+            ordenar_lista_descendente(lista_repetidos);
+            listar(lista_repetidos);
             fflush(stdin);
             break;
         case 5:
             system("cls");
             printf("***LISTA ORDENADA DE MANERA ASCENDENTE SIN REPETIDOS***");
-            lista_nueva2 = lista_letras->clone(lista_letras);
-            quitar_repetidos(lista_nueva2);
-            listar(lista_nueva2);
+            lista_unicos = lista_letras->clone(lista_letras);
+            ordenar_lista_ascendente(lista_unicos);
+            quitar_repetidos(lista_unicos);
+            listar(lista_unicos);
             fflush(stdin);
             break;
         case 6:

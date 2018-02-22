@@ -28,11 +28,18 @@ int parserNumero(FILE* pFile, ArrayList* pArrayListNumero)
         {
             fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%s\n",auxNumero,auxNombre,auxPar,auxImpar,auxPrimo);
             //%[^,],%[^,],%[^,],%s[^\n]\n
-            nuevoNumero->numero = atoi(auxNumero);//GETTERS Y SETTERS
+
+            /*nuevoNumero->numero = atoi(auxNumero);//GETTERS Y SETTERS
             strcpy(nuevoNumero->nombre, auxNombre);
             nuevoNumero->par = atoi(auxPar);
             nuevoNumero->impar = atoi(auxImpar);
-            nuevoNumero->primo = atoi(auxPrimo);
+            nuevoNumero->primo = atoi(auxPrimo);*/
+
+            numero_setNumero(nuevoNumero, atoi(auxNumero) );
+            numero_setNombre(nuevoNumero, auxNombre);
+            numero_setPar(nuevoNumero, atoi(auxPar) );
+            numero_setImpar(nuevoNumero, atoi(auxImpar));
+            numero_setPrimo(nuevoNumero, atoi(auxPrimo) );
 
             if ( pArrayListNumero->add(pArrayListNumero, nuevoNumero) == -1 )
             {
@@ -262,27 +269,27 @@ int leer_BIN()
     eNumero numero;
     FILE* pFile;
     if ( (pFile = fopen("SALIDA.bin","rb") ) == NULL)
-	{
-		printf("No se pudo abrir el archivo");
-		exit(1);
-	}
+    {
+        printf("No se pudo abrir el archivo");
+        exit(1);
+    }
 
-	while(!feof(pFile))
-	{
-			cant = fread(&numero, sizeof(numero), 1, pFile);
-			if(cant!=1)
-			{
-				if(feof(pFile))
-					break;
-				else
-				{
-					printf("No leyo el ultimo registro");
-					break;
-				}
-			}
-			printf("%d %s %d %d %d\n",numero.numero,numero.nombre,numero.par,numero.impar,numero.primo);
-	}
-	fclose(pFile);
-	//getch();
-	return 0;
+    while(!feof(pFile))
+    {
+        cant = fread(&numero, sizeof(numero), 1, pFile);
+        if(cant!=1)
+        {
+            if(feof(pFile))
+                break;
+            else
+            {
+                printf("No leyo el ultimo registro");
+                break;
+            }
+        }
+        printf("%d %s %d %d %d\n",numero.numero,numero.nombre,numero.par,numero.impar,numero.primo);
+    }
+    fclose(pFile);
+    //getch();
+    return 0;
 }

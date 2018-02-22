@@ -9,6 +9,7 @@ int main()
     char seguir = 's';
     int opcion = 0;
     int flag;
+    char binario;
 
     ArrayList* lista_numeros = al_newArrayList();
 
@@ -17,7 +18,7 @@ int main()
         printf("\nNo se pudo reservar memoria...");
         exit(1);
     }
-    FILE* f = fopen("datos2.csv","r");
+    FILE* f = fopen("datos.csv","r");
 
     if(f == NULL)
     {
@@ -26,11 +27,14 @@ int main()
     }
     while( seguir == 's' )
     {
-        printf("1- LEER (parser ArrayList)\n");
-        printf("2- COMPLETAR\n");
-        printf("3- ORDENAR\n");
-        printf("4- INFORMAR\n");
-        printf("5- Salir\n");
+        printf("1.- LEER (parser ArrayList)\n");
+        printf("2.- COMPLETAR\n");
+        printf("3.- ORDENAR y QUITAR REPETIDOS\n");
+        printf("4.- INFORMAR\n");
+        printf("5.- Salir\n");
+        printf("6.- Grabar archivo .csv con la lista\n");
+        printf("7.- Grabar archivo .bin con la lista\n");
+        printf("8.- Mostrar el contenido de la lista actual por pantalla\n");
 
         scanf("%d",&opcion);
 
@@ -53,6 +57,12 @@ int main()
         case 2:
             system("cls");
             printf("***COMPLETAR CAMPOS (par, impar, primo)***\n");
+            flag = al_isEmpty(lista_numeros);
+            if (flag)
+            {
+                printf("\nERROR: la lista cargada esta vacia! \nNo se puede realizar el autocompletado sin antes haber parseado el archivo al ArrayList!\n\n");
+                break;
+            }
             flag = completar_lista(lista_numeros);
             if (flag)
             {
@@ -62,15 +72,13 @@ int main()
             {
                 printf("\nLista completada con exito\n\n");
             }
-            listar(lista_numeros);
             fflush(stdin);
             break;
         case 3:
             system("cls");
-            printf("***ORDENAR y QUITAR REPETIDOS***\n");
+            printf("***ORDENAR y QUITAR REPETIDOS***\n"); //no muestro por pantalla si funcionan. Evitar uso de funciones tipadas en VOID.
             ordernar_lista(lista_numeros);
-            quitarRepetidos_lista(lista_numeros);//no funca
-            listar(lista_numeros);
+            quitarRepetidos_lista(lista_numeros);
             printf("\n");
             fflush(stdin);
             break;
@@ -86,6 +94,56 @@ int main()
             seguir = 'n';
             fflush(stdin);
             break;
+        case 6:
+            system("cls");
+            printf("***GRABAR ARCHIVO .CSV CON LA LISTA***\n");
+            flag = grabar_CSV(lista_numeros);
+            if (flag)
+            {
+                printf("\nError al guardar el archivo SALIDA.csv\n");
+            }
+            else
+            {
+                printf("\nArchivo de lista SALIDA.csv generado con exito\n\n");
+            }
+            break;
+        case 7:
+            system("cls");
+            printf("***GRABAR ARCHIVO .BIN CON LA LISTA***\n");
+            flag = grabar_BIN(lista_numeros);
+            if (flag)
+            {
+                printf("\nError al grabar el archivo SALIDA.bin\n");
+            }
+            else
+            {
+                printf("\nArchivo de lista SALIDA.bin generado con exito\n\n");
+                printf("\nDesea abrirlo?\nY/N\n\n");
+                scanf("%c",&binario);
+                if ( binario == 'y' || binario == 'Y')
+                {
+                    leer_BIN();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            break;
+        case 8:
+            system("cls");
+            printf("***MOSTRAR LISTA POR PANTALLA***");
+            flag = al_isEmpty(lista_numeros);
+            if (flag)
+            {
+                printf("\nERROR: la lista cargada esta vacia!\n\n");
+                break;
+            }
+            else
+            {
+                listar(lista_numeros);
+                break;
+            }
         }
     }
     return 0;

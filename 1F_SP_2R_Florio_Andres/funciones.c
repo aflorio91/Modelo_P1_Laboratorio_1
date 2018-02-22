@@ -107,6 +107,7 @@ void ordernar_lista(ArrayList* lista )
         lista->sort(lista,numero_compare,1);
     }
 }
+
 void quitarRepetidos_lista(ArrayList* lista)
 {
     eNumero* auxNumero;
@@ -115,10 +116,10 @@ void quitarRepetidos_lista(ArrayList* lista)
 
     if ( lista != NULL  )
     {
-        for (i = 0; i<lista->len(lista); i++)
+        for (i = 0; i<lista->len(lista); i++ )
         {
             j = i+1;
-            printf("\ni:%d",i);
+            //printf("\ni:%d",i);
             auxNumero = lista->get(lista, i );
             auxNumero2 = lista->get(lista, j );
             if ( auxNumero2 != NULL )
@@ -126,10 +127,35 @@ void quitarRepetidos_lista(ArrayList* lista)
                 if ( numero_compare(auxNumero,auxNumero2) == 0 )
                 {
                     lista->remove(lista, j );
+                    i--;
                 }
-                else
+            }
+        }
+    }
+}
+
+void nueva_funcion_deQuitarRepetidos(ArrayList* lista_vieja, ArrayList* lista_nueva)
+{
+    eNumero* auxNumero;
+    eNumero* auxNumero2;
+    int i,j;
+    auxNumero = numero_new();
+    auxNumero2 = numero_new();
+
+    if ( auxNumero != NULL && auxNumero2 != NULL )
+    {
+        for (i = 0; i<al_len(lista_vieja); i++)
+        {
+            auxNumero = al_get(lista_vieja,i);
+
+            for ( j = 0; j<al_len(lista_vieja); j++)
+            {
+                auxNumero2 = al_get(lista_vieja,j);
+
+                //if ( ((eNumero*)auxNumero)->nombre != ((eNumero*)auxNumero2)->nombre )
+                if ( auxNumero->numero != auxNumero2->numero)
                 {
-                    i++;
+                    al_add(lista_nueva, auxNumero);
                 }
             }
         }
@@ -190,3 +216,73 @@ void informar(ArrayList* lista)
     printf("\nTOTAL: %d\n\n",contCeros + contPares + contImpares);
 }
 
+int grabar_CSV(ArrayList* list)
+{
+    int i, retorno = 1;
+    void* pNumero = NULL;
+
+    FILE* numerosCsv = fopen ("SALIDA.csv", "w");
+
+    if( numerosCsv != NULL )
+    {
+        for(i=0; i<al_len(list); i++)
+        {
+            pNumero = al_get(list, i);
+            fprintf(numerosCsv, "%d,%s,%d,%d,%d\n", numero_getNumero(pNumero), numero_getNombre(pNumero), numero_getPar(pNumero), numero_getImpar(pNumero), numero_getPrimo(pNumero)  );
+            retorno = 0;
+        }
+    }
+    fclose (numerosCsv);
+    return retorno;
+}
+
+int grabar_BIN(ArrayList* list)
+{
+    int i, retorno = -1;
+    void* pNumero = NULL;
+
+    FILE* numerosBin = fopen ("SALIDA.bin", "wb");
+
+    if ( numerosBin != NULL)
+    {
+        for (i=0; i<al_len(list); i++)
+        {
+            pNumero = al_get(list,i);
+            fwrite(pNumero,sizeof(eNumero),1,numerosBin);
+            retorno = 0;
+        }
+    }
+    fclose(numerosBin);
+    return retorno;
+}
+
+int leer_BIN()
+{
+    int cant;
+    eNumero numero;
+    FILE* pFile;
+    if ( (pFile = fopen("SALIDA.bin","rb") ) == NULL)
+	{
+		printf("No se pudo abrir el archivo");
+		exit(1);
+	}
+
+	while(!feof(pFile))
+	{
+			cant = fread(&numero, sizeof(numero), 1, pFile);
+			if(cant!=1)
+			{
+				if(feof(pFile))
+					break;
+				else
+				{
+					printf("No leyo el ultimo registro");
+					break;
+				}
+			}
+			printf("%d %s %d %d %d\n",numero.numero,numero.nombre,numero.par,numero.impar,numero.primo);
+	}
+	fclose(pFile);
+	//getch();
+	return 0;
+}

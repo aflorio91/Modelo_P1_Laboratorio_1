@@ -18,9 +18,11 @@
 
 #ifndef __ARRAYLIST
 #define __ARRAYLIST
-struct ArrayList{
+struct ArrayList
+{
+
+    void** pElements;
     int size;
-    void **pElements;
     int reservedSize;
 
     int     (*add)();
@@ -40,7 +42,7 @@ struct ArrayList{
     struct ArrayList* (*subList)();
     int     (*deleteArrayList)();
 
-}typedef ArrayList;
+} typedef ArrayList;
 #endif
 
 
@@ -59,7 +61,7 @@ ArrayList* al_newArrayList(void);
  * \return int Return (-1) if Error [pList or pElement are NULL pointer] - (0) if Ok
  *
  */
-int al_add(ArrayList* pList,void* pElement);
+int al_add(ArrayList* this,void* pElement);
 
 
 /** \brief  Delete arrayList
@@ -67,7 +69,7 @@ int al_add(ArrayList* pList,void* pElement);
  * \return int Return (-1) if Error [pList is NULL pointer] - (0) if Ok
  *
  */
-int al_deleteArrayList(ArrayList* pList);
+int al_deleteArrayList(ArrayList* this);
 
 
 /** \brief  Delete arrayList
@@ -75,7 +77,7 @@ int al_deleteArrayList(ArrayList* pList);
  * \return int Return length of array or (-1) if Error [pList is NULL pointer]
  *
  */
-int al_len(ArrayList* pList);
+int al_len(ArrayList* this);
 
 
 /** \brief  Get an element by index
@@ -84,7 +86,7 @@ int al_len(ArrayList* pList);
  * \return void* Return (NULL) if Error [pList is NULL pointer or invalid index] - (Pointer to element) if Ok
  *
  */
-void* al_get(ArrayList* pList , int index);
+void* al_get(ArrayList* this, int index);
 
 
 /** \brief  Find if pList contains at least one element pElement
@@ -95,7 +97,7 @@ void* al_get(ArrayList* pList , int index);
  *                  - ( 1) if this list contains at least one element pElement
  *
  */
-int al_contains(ArrayList* pList, void* pElement);
+int al_contains(ArrayList* this, void* pElement);
 
 
 /** \brief  Set a element in pList at index position
@@ -106,7 +108,7 @@ int al_contains(ArrayList* pList, void* pElement);
  *                  - ( 0) if Ok
  *
  */
-int al_set(ArrayList* pList, int index,void* pElement);
+int al_set(ArrayList* this, int index,void* pElement);
 
 
 /** \brief  Remove an element by index
@@ -115,7 +117,7 @@ int al_set(ArrayList* pList, int index,void* pElement);
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int al_remove(ArrayList* pList,int index);
+int al_remove(ArrayList* this,int index);
 
 
 
@@ -124,7 +126,7 @@ int al_remove(ArrayList* pList,int index);
  * \return int Return (-1) if Error [pList is NULL pointer]
  *                  - ( 0) if Ok
  */
-int al_clear(ArrayList* pList);
+int al_clear(ArrayList* this);
 
 
 /** \brief Returns an array containing all of the elements in this list in proper sequence
@@ -132,7 +134,7 @@ int al_clear(ArrayList* pList);
  * \return ArrayList* Return  (NULL) if Error [pList is NULL pointer]
  *                          - (New array) if Ok
  */
-ArrayList* al_clone(ArrayList* pList);
+ArrayList* al_clone(ArrayList* this);
 
 
 /** \brief Inserts the element at the specified position
@@ -142,7 +144,7 @@ ArrayList* al_clone(ArrayList* pList);
  * \return int Return (-1) if Error [pList or pElement are NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int al_push(ArrayList* pList, int index, void* pElement);
+int al_push(ArrayList* this, int index, void* pElement);
 
 
 
@@ -151,7 +153,7 @@ int al_push(ArrayList* pList, int index, void* pElement);
  * \param pElement void* Pointer to element
  * \return int Return (-1) if Error [pList or pElement are NULL pointer] - (index to element) if Ok
  */
-int al_indexOf(ArrayList* pList, void* pElement);
+int al_indexOf(ArrayList* this, void* pElement);
 
 
 
@@ -159,7 +161,7 @@ int al_indexOf(ArrayList* pList, void* pElement);
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return (-1) if Error [pList is NULL pointer] - (0) if Not Empty - (1) if is Empty
  */
-int al_isEmpty(ArrayList* pList);
+int al_isEmpty(ArrayList* this);
 
 
 
@@ -169,8 +171,9 @@ int al_isEmpty(ArrayList* pList);
  * \return int Return (NULL) if Error [pList is NULL pointer or invalid index]
  *                  - ( element pointer) if Ok
  */
-void* al_pop(ArrayList* pList,int index);
+void* al_pop(ArrayList* this,int index);
 
+void* al_insert(ArrayList* this, int index, void* pElement);
 
 
 /** \brief Returns a new arrayList with a portion of pList between the specified
@@ -181,7 +184,7 @@ void* al_pop(ArrayList* pList,int index);
  * \return int Return (NULL) if Error [pList is NULL pointer or invalid 'from' or invalid 'to']
  *                  - ( pointer to new array) if Ok
  */
-ArrayList* al_subList(ArrayList* pList,int from,int to);
+ArrayList* al_subList(ArrayList* this,int from,int to);
 
 
 
@@ -191,7 +194,7 @@ ArrayList* al_subList(ArrayList* pList,int from,int to);
  * \return int Return (-1) if Error [pList or pList2 are NULL pointer]
  *                  - (0) if Not contains All - (1) if is contains All
  */
-int al_containsAll(ArrayList* pList,ArrayList* pList2);
+int al_containsAll(ArrayList* this,ArrayList* this2);
 
 
 /** \brief Sorts objects of list, use compare pFunc
@@ -201,7 +204,7 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2);
  * \return int Return (-1) if Error [pList or pFunc are NULL pointer]
  *                  - (0) if ok
  */
-int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order);
+int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order);
 
 
 
@@ -210,7 +213,7 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order);
  * \return int Return (-1) if Error [pList is NULL pointer or if can't allocate memory]
  *                  - (0) if ok
  */
-int resizeUp(ArrayList* pList);
+int resizeUp(ArrayList* this);
 
 
 /** \brief  Expand an array list
@@ -219,7 +222,7 @@ int resizeUp(ArrayList* pList);
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int expand(ArrayList* pList,int index);
+int expand(ArrayList* this,int index);
 
 
 /** \brief  Contract an array list
@@ -228,11 +231,14 @@ int expand(ArrayList* pList,int index);
  * \return int Return (-1) if Error [pList is NULL pointer or invalid index]
  *                  - ( 0) if Ok
  */
-int contract(ArrayList* pList,int index);
+int contract(ArrayList* this,int index);
 
 
 // Private function
-int resizeUp(ArrayList* pList);
-int expand(ArrayList* pList,int index);
-int contract(ArrayList* pList,int index);
+int resizeUp(ArrayList* this);
+int expand(ArrayList* this,int index);
+int contract(ArrayList* this,int index);
 //___________________
+
+void al_debugShow(ArrayList* this);
+int resizeDown(ArrayList* this);

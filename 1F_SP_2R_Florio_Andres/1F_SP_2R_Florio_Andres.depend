@@ -135,34 +135,34 @@
 1513291102 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\funciones.h
 	"ArrayList.h"
 
-1511449882 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\arraylist.c
+1518448162 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"../inc/ArrayList.h"
+	"ArrayList.h"
 
-1513379321 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\funciones.c
+1518471513 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"numeroNatural.h"
 	"ArrayList.h"
 
-1513294574 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\numeronatural.h
+1517958261 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\numeronatural.h
 
-1511449882 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\arraylist.h
+1518448162 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\arraylist.h
 
-1513378947 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\main.c
+1518471784 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\main.c
 	<stdio.h>
 	<stdlib.h>
 	"numeroNatural.h"
 	"funciones.h"
 	"ArrayList.h"
 
-1513291102 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\funciones.h
+1518471411 f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\funciones.h
 	"ArrayList.h"
 
-1516315837 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\numeronatural.c
+1518448343 source:f:\backup\documents\utn\fr avellaneda\programación i\drive\1f_sp_2r_florio_andres\numeronatural.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -4,14 +4,14 @@
 #include "ArrayList.h"
 #include "numeroNatural.h"
 
-int* numero_getNumero(eNumero* this)
+int numero_getNumero(eNumero* this)
 {
     if(this != NULL)
     {
         return this->numero;
     }
 }
-void numero_setNumero(eNumero* this, int* unNumero)
+void numero_setNumero(eNumero* this, int unNumero)
 {
     if(this != NULL)
     {
@@ -32,14 +32,14 @@ void numero_setNombre(eNumero* this, char* unNombre)
         strcpy(this->nombre, unNombre);
     }
 }
-int* numero_getPar(eNumero* this)
+int numero_getPar(eNumero* this)
 {
     if(this != NULL)
     {
         return this->par;
     }
 }
-void numero_setPar(eNumero* this, int* paridad)
+void numero_setPar(eNumero* this, int paridad)
 {
     if(this != NULL)
     {
@@ -53,7 +53,7 @@ int numero_getImpar(eNumero* this)
         return this->impar;
     }
 }
-void numero_setImpar(eNumero* this, int* paridad)
+void numero_setImpar(eNumero* this, int paridad)
 {
     if(this != NULL)
     {
@@ -67,7 +67,7 @@ int numero_getPrimo(eNumero* this)
         return this->primo;
     }
 }
-void numero_setPrimo(eNumero* this, int* es_primo)
+void numero_setPrimo(eNumero* this, int es_primo)
 {
     if(this != NULL)
     {

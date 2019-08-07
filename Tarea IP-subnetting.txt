@@ -1,0 +1,329 @@
+Binary To Decimal Conversion (pág. 1)
+
+10010010 == 146
+
+01110111 == 119
+
+11111111 == 255
+
+11000101 == 197
+
+11110110 == 246
+
+00010011 == 19
+
+10000001 == 129
+
+00110001 == 49
+
+01111000 == 120
+
+11110000 == 240
+
+00111011 == 59
+
+00000111 == 7
+
+00011011 == 27
+
+10101010 == 170
+
+01101111 == 111
+
+11111000 == 248
+
+00100000 == 32
+
+01010101 == 85
+
+00111110 == 62
+
+00000011 == 3
+
+11101101 == 237
+
+11000000 == 192
+
+
+Decimal To Binary Conversion (pág. 2)
+
+238 == 11101110
+
+34 == 100010
+
+123 == 1111011
+
+50 == 110010
+
+255 == 11111111
+
+200 == 11001000
+
+10 == 1010
+
+138 == 10001010
+
+1 == 1
+
+13 == 1101
+
+250 == 11111010
+
+107 == 1101011
+
+224 == 11100000
+
+114 == 1110010
+
+192 == 11000000
+
+172 == 10101100
+
+100 == 1100100
+
+119 == 1110111
+
+57 == 111001
+
+98 == 1100010
+
+179 == 10110011
+
+2 == 10
+
+Address Class Identification (pág. 3)
+
+10.250.1.1 _____A
+150.10.15.0 _____B
+192.14.2.0 _____B
+148.17.9.1 _____B
+193.42.1.1 _____C
+126.8.156.0 _____A
+220.200.23.1 _____C
+230.230.45.58 _____D
+177.100.18.4 _____B
+119.18.45.0 _____A
+249.240.80.78 _____E
+199.155.77.56 _____C
+117.89.56.45 _____B
+215.45.45.0 _____C
+199.200.15.0 _____C
+95.0.21.90 _____A
+33.0.0.0 _____A
+158.98.80.0 _____B
+219.21.56.0 _____C
+
+Network & Host Identification (pág. 4)
+
+Circle the network portion of these addresses:
+
+(177.100).18.4
+(119).18.45.0
+(209.240.80).78
+(199.155.77).56
+(117).89.56.45
+(215.45.45).0
+(192.200.15).0
+(95).0.21.90
+(33).0.0.0
+(158.98).80.0
+(217.21.56).0
+(10).250.1.1
+(150.10).15.0
+(192.14.2).0
+(148.17).9.1
+(193.42.1).1
+(126).8.156.0
+220.200.23.1 (Reserved for multicast)
+
+Circle the host portion of these addresses:
+
+10(.15.123.50)
+171.2.(199.31)
+198.125.87.(177)
+223.250.200.(222)
+17.(45.222.45)
+126.(201.54.231)
+191.41.(35.112)
+155.25.(169.227)
+192.15.155.(2)
+123.(102.45.254)
+148.17.(9.155)
+100.(25.1.1)
+195.0.21.(98)
+25.(250.135.46)
+171.102.(77.77)
+55.(250.5.5)
+218.155.230.(14)
+10.(250.1.1)
+
+Network Addresses (pág.5)
+
+Using the IP address and subnet mask shown write out the network address:
+
+188.10.18.2 _____________________________188 . 10 . 0 . 0
+255.255.0.0
+10.10.48.80 _____________________________10 . 10 . 48 . 0
+255.255.255.0
+192.149.24.191 _____________________________192.149.24.0
+255.255.255.0
+150.203.23.19 _____________________________150.203.0.0
+255.255.0.0
+10.10.10.10 _____________________________10.0.0.0
+255.0.0.0
+186.13.23.110 _____________________________186.13.23.0
+255.255.255.0
+223.69.230.250 _____________________________223.69.0.0
+255.255.0.0
+200.120.135.15 _____________________________200.120.135.0
+255.255.255.0
+27.125.200.151 _____________________________27.0.0.0
+255.0.0.0
+199.20.150.35 _____________________________199.20.150.0
+255.255.255.0
+191.55.165.135 _____________________________191.55.165.0
+255.255.255.0
+28.212.250.254 _____________________________28.212.0.0
+255.255.0.0
+
+Host Addresses (pág.6)
+
+Using the IP address and subnet mask shown write out the host address:
+
+188.10.18.2 _____________________________0.0.18.2
+255.255.0.0
+10.10.48.80 _____________________________0.0.0.80
+255.255.255.0
+222.49.49.11 _____________________________0.0.0.11
+255.255.255.0
+128.23.230.19 _____________________________0.0.230.19
+255.255.0.0
+10.10.10.10 _____________________________0.10.10.10
+255.0.0.0
+200.113.123.11 _____________________________0.0.0.11
+255.255.255.0
+223.169.23.20 _____________________________0.0.23.20
+255.255.0.0
+203.20.35.215 _____________________________0.0.0.215
+255.255.255.0
+117.15.2.51 _____________________________0.15.2.51
+255.0.0.0
+199.120.15.135 _____________________________0.0.0.135
+255.255.255.0
+191.55.165.135 _____________________________0.0.0.135
+255.255.255.0
+48.21.25.54 _____________________________0.0.25.54
+255.255.0.0
+
+Default Subnet Masks (pág.7)
+
+Write the correct default subnet mask for each of the following addresses:
+
+177.100.18.4 _____________________________255.255.0.0 
+119.18.45.0 _____________________________255.0.0.0 
+191.249.234.191 _____________________________255.255.0.0 
+223.23.223.109 _____________________________255.255.255.0 
+10.10.250.1 _____________________________255.0.0.0 
+126.123.23.1 _____________________________255.0.0.0 
+223.69.230.250 _____________________________255.255.255.0 
+192.12.35.105 _____________________________255.255.255.0 
+77.251.200.51 _____________________________255.0.0.0 
+189.210.50.1 _____________________________255.255.0.0 
+88.45.65.35 _____________________________255.0.0.0 
+128.212.250.254 _____________________________255.255.0.0 
+193.100.77.83 _____________________________255.255.255.0 
+125.125.250.1 _____________________________255.0.0.0 
+1.1.10.50 _____________________________255.0.0.0 
+220.90.130.45 _____________________________255.255.255.0 
+134.125.34.9 _____________________________255.255.0.0 
+95.250.91.99 _____________________________255.0.0.0 
+
+
+Subnetting (pág. 32)
+
+PROBLEM 3
+
+Number of needed subnets: 2
+Network Address: 195.223.50.0
+Address class: C
+Default subnet mask: 255.255.255.0
+Custom subnet mask: 255.255.255.128
+Total number of subnets: 2
+Total number of host addresses: 2
+Number of usable addresses: 1
+Number of bits borrowed: 1
+
+What is the 2nd subnet range? 195.223.0.128 - 195.233.0.255
+What is the subnet number for the 2nd subnet?
+What is the subnet broadcast address for the 1st subnet?
+What are the assignable addresses for the 1st subnet?
+
+
+Problem 4
+
+Number of needed subnets 750
+Network Address 190.35.0.0
+Address class
+Default subnet mask
+Custom subnet mask
+Total number of subnets
+Total number of host addresses
+Number of usable addresses
+Number of bits borrowed
+
+What is the 15th subnet range?
+What is the subnet number for the 13th subnet?
+What is the subnet broadcast address for the 10th subnet?
+What are the assignable addresses for the 6th subnet?
+
+
+Problem 5
+
+Number of needed usable hosts 6
+Network Address 126.0.0.0
+Address class
+Default subnet mask
+Custom subnet mask
+Total number of subnets
+Total number of host addresses
+Number of usable addresses
+Number of bits borrowed
+
+What is the 2nd subnet range?
+What is the subnet number for the 5th subnet?
+What is the subnet broadcast address for the 7th subnet?
+What are the assignable addresses for the 10th subnet?
+
+Problem 6
+
+Number of needed subnets 10
+Network Address 192.70.10.0
+Address class
+Default subnet mask
+Custom subnet mask
+Total number of subnets
+Total number of host addresses
+Number of usable addresses
+Number of bits borrowed
+
+What is the 9th subnet range?
+What is the subnet number for the 4th subnet?
+What is the subnet broadcast address for the 12th subnet?
+What are the assignable addresses for the 10th subnet?
+
+Problem 7
+
+Network Address 10.0.0.0 /16
+Address class A
+Default subnet mask 255.255.0.0
+Custom subnet mask
+Total number of subnets
+Total number of host addresses
+Number of usable addresses
+Number of bits borrowed
+
+
+What is the 11th subnet range?
+What is the subnet number for the 6th subnet?
+What is the subnet broadcast address for the 2nd subnet?
+What are the assignable addresses for the 9th subnet?

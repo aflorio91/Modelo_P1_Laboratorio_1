@@ -1,0 +1,11 @@
+*IP subnetting.pdf: ejercicios del 1 al 7 y 32 a 40.
+
+*apuntes VLSM: problemas 14, 15 y 16 -> pagina 21, 22 y 23.
+estan con el metodo circulo (no se hace)
+hacer con metodo CAJA.
+
+*apuntes IPv6 -> pagina 10 -> IPv6 compacta -> extenderlas.****************
+
+Entregar el 6 de JULIO.
+
+No va en el final.

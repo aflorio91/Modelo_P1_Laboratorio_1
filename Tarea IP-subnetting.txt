@@ -263,9 +263,9 @@ Problem 4
 
 Number of needed subnets 750
 Network Address 190.35.0.0
-Address class
-Default subnet mask
-Custom subnet mask
+Address class: B
+Default subnet mask 255.255.0.0
+Custom subnet mask 255.255.255.192
 Total number of subnets
 Total number of host addresses
 Number of usable addresses
@@ -281,16 +281,16 @@ Problem 5
 
 Number of needed usable hosts 6
 Network Address 126.0.0.0
-Address class
-Default subnet mask
-Custom subnet mask
-Total number of subnets
-Total number of host addresses
+Address class A
+Default subnet mask 255.0.0.0
+Custom subnet mask 255.248.0.0
+Total number of subnets 8
+Total number of host addresses 6
 Number of usable addresses
-Number of bits borrowed
+Number of bits borrowed 5
 
-What is the 2nd subnet range?
-What is the subnet number for the 5th subnet?
+What is the 2nd subnet range? 126.0.0.16 - 126.0.0.31
+What is the subnet number for the 5th subnet? 126.0.0.128 
 What is the subnet broadcast address for the 7th subnet?
 What are the assignable addresses for the 10th subnet?
 
@@ -298,13 +298,13 @@ Problem 6
 
 Number of needed subnets 10
 Network Address 192.70.10.0
-Address class
-Default subnet mask
-Custom subnet mask
-Total number of subnets
-Total number of host addresses
+Address class C
+Default subnet mask 255.255.255.0
+Custom subnet mask 255.255.255.240
+Total number of subnets 5
+Total number of host addresses 6
 Number of usable addresses
-Number of bits borrowed
+Number of bits borrowed 4
 
 What is the 9th subnet range?
 What is the subnet number for the 4th subnet?
@@ -315,7 +315,7 @@ Problem 7
 
 Network Address 10.0.0.0 /16
 Address class A
-Default subnet mask 255.255.0.0
+Default subnet mask 255.0.0.0
 Custom subnet mask
 Total number of subnets
 Total number of host addresses
